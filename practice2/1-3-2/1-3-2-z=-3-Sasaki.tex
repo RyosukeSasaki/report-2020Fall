@@ -1,0 +1,71 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsubsection}{(\roman{subsubsection})}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+\usepackage{otf}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+
+\begin{document}
+第1回 3-(2)
+\begin{flushright}
+  佐々木良輔
+\end{flushright}
+関数$f(z)$の特異点を求めその周りでLaurent展開せよ.また,各特異点での留数はいくらか.
+\begin{align*}
+  f(z)=\cfrac{(z+1)^2}{z(z+3)^2}
+\end{align*}
+\hrulefill\\
+$f(z)$を部分分数分解すると
+\begin{align*}
+  f(z)=\cfrac{1}{9z}+\cfrac{8}{9(z+3)}-\cfrac{4}{3(z+3)^2}
+\end{align*}
+特異点は$z=0,-3$である.ここでは$z=-3$周りでLaurent展開する.
+\setcounter{subsubsection}{2}
+\subsubsection{$0<|z+3|<3$のとき}
+$w=z+3$として, $0<|\cfrac{w}{3}|<1$なので
+\begin{align*}
+  \cfrac{1}{z}&=\cfrac{1}{w-3}\\
+  &=-\cfrac{1}{3}\cdot\cfrac{1}{1-\frac{w}{3}}\\
+  &=-\cfrac{1}{3}\sum^{\infty}_{n=1}(\cfrac{w}{3})^{n-1}\\
+  &=-\cfrac{1}{3}\sum^{\infty}_{n=1}(\cfrac{z+3}{3})^{n-1}
+\end{align*}
+したがって
+\begin{align*}
+  f(z)=-\cfrac{4}{3(z+3)^2}+\cfrac{8}{9(z+3)}-\cfrac{1}{27}\sum^{\infty}_{n=1}(\cfrac{z+3}{3})^{n-1}
+\end{align*}
+となり,これは$z=-3$周りのLaurent級数である.
+\subsubsection{$3<|z+3|$のとき}
+$w=z+3$として, $0<|\cfrac{3}{w}|<1$なので
+\begin{align*}
+  \cfrac{1}{z}&=\cfrac{1}{w-3}\\
+  &=\cfrac{1}{w}\cdot\cfrac{1}{1-\frac{3}{w}}\\
+  &=\cfrac{1}{w}\sum^{\infty}_{n=1}(\cfrac{3}{w})^{n-1}\\
+  &=\cfrac{1}{z+3}\sum^{\infty}_{n=1}(\cfrac{3}{z+3})^{n-1}
+\end{align*}
+したがって
+\begin{align*}
+  f(z)=-\cfrac{4}{3(z+3)^2}+\cfrac{8}{9(z+3)}+\sum^{\infty}_{n=1}\cfrac{3^{n-3}}{(z+3)^n}
+\end{align*}
+となり,これは$z=-3$周りのLaurent級数である.\\
+また$z=-3$は2位の極なので, $z=-3$での留数は
+\begin{align*}
+  \underset{z=-3}{\rm{Res}}(f(z))=\cfrac{1}{(2-1)!}\lim_{z\to -3}\left\{\cfrac{d}{dz}(z+3)^2\cfrac{(z+1)^2}{z(z+3)^2}\right\}=\cfrac{8}{9}
+\end{align*}
+となる.
+\end{document}
