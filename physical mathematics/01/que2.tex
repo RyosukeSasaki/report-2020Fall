@@ -1,0 +1,78 @@
+\setcounter{section}{2}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+\subsection{}
+$n\in\mathbb{N}$において$\rm{Re}(n+\frac{1}{2})>0$なので,漸化式$\bf{\Gamma}(z)=(z-1)\bf{\Gamma}(z-1)$より
+\begin{align}
+  {\bf\Gamma}(n+\cfrac{1}{2})&=(n-\cfrac{1}{2})(n-\cfrac{3}{2})\cdots\cfrac{3}{2}\cdot\cfrac{1}{2}\cdot{\bf\Gamma}(\cfrac{1}{2})\\
+  &=(\cfrac{2n-1}{2})(\cfrac{2n-3}{2})\cdots\cfrac{3}{2}\cdot\cfrac{1}{2}\cdot{\bf\Gamma}(\cfrac{1}{2})\\
+  &=\cfrac{(2n-1)!!}{2^n}\cdot{\bf\Gamma}(\cfrac{1}{2})
+\end{align}
+ここでGamma関数とBeta関数の関係から
+\begin{align}
+  \begin{split}
+    {\bf\Gamma}(\cfrac{1}{2})^2&={\rm{\bf{B}}}(\cfrac{1}{2},\cfrac{1}{2}){\bf\Gamma}(1)\\
+    &=\int^1_0t^{-\frac{1}{2}}(1-t)^{-\frac{1}{2}}dt\\
+    &=\int^{\frac{\pi}{2}}_0\cfrac{2\sin\theta\cos\theta}{\sin\theta\cos\theta}dt\\
+    &=\pi\\
+    \therefore\ {\bf\Gamma}(\cfrac{1}{2})&=\sqrt{\pi}
+  \end{split}
+\end{align}
+となる.以上から
+\begin{align*}
+  {\bf\Gamma}(n+\cfrac{1}{2})=\cfrac{(2n-1)!!}{2^n}\sqrt{\pi}
+\end{align*}
+\newpage
+\subsection{}
+\begin{align}
+  {\bf\Gamma}(x+1)=\int^{\infty}_0t^x{\rm e}^{-t}dt
+\end{align}
+において$t=x\tau$, $dt=xd\tau$とすると以下のように書き換えられる.
+\begin{align}
+  {\bf\Gamma}(x+1)&=\int^{\infty}_0(x\tau)^x{\rm e}^{-x\tau}xd\tau\\
+  &=x^{x+1}\int^{\infty}_0\tau^x{\rm e}^{-x\tau}d\tau\\
+  &=x^{x+1}\int^{\infty}_0{\rm e}^{-x(\tau-\log\tau)}d\tau\\
+  &=x^{x+1}\int^{\infty}_0{\rm e}^{-xh(\tau)}d\tau
+\end{align}
+ここで$h(\tau)=:\tau-\log\tau$である. $h(\tau)$の増減を考えると,表\ref{tab:zougenhyo}のように$\tau=1$で最小値を取る.
+$x\gg1$のとき,図\ref{fig:fig1.eps}のように$e^{-xh(\tau)}$は急激に減衰するため$h(\tau)$の最小値付近が支配的に積分に寄与する.
+よって$h(\tau)$を$\tau=1$周りでテイラー展開すると
+\begin{align}
+  h(\tau)=1+\cfrac{(\tau-1)^2}{2}-\cfrac{(\tau-1)^3}{3}+\cfrac{(\tau-1)^4}{4}-\cdots
+\end{align}
+したがって
+\begin{align}
+  {\bf\Gamma}(x+1)&=x^{x+1}\int^{\infty}_0d\tau\ \exp-x\left[1+\cfrac{(\tau-1)^2}{2}-\cfrac{(\tau-1)^3}{3}+\cfrac{(\tau-1)^4}{4}-\cdots\right]\\
+  &={\rm e}^{-x}x^{x+1}\int^{\infty}_0d\tau\ \exp-x\left[\cfrac{(\tau-1)^2}{2}-\cfrac{(\tau-1)^3}{3}+\cfrac{(\tau-1)^4}{4}-\cdots\right]
+\end{align}
+ここで$y=\sqrt{x}(\tau-1)$と変数変換する.このとき$dy=\sqrt{x}dt$,積分区間は$[-\sqrt{x},\infty)$なので
+\begin{align}
+  {\bf\Gamma}(x+1)&={\rm e}^{-x}x^{x+1}\int^{\infty}_{-\sqrt{x}}\cfrac{dy}{\sqrt{x}}\ \exp-x\left[\cfrac{y^2}{2x}-\cfrac{y^3}{3x\sqrt{x}}+\cfrac{y^4}{4x^2}-\cdots\right]\\
+  &={\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\sqrt{x}}dy\ \exp\left[-\cfrac{y^2}{2}+\cfrac{y^3}{3\sqrt{x}}-\cfrac{y^4}{4x}+\cdots\right]
+\end{align}
+ただし図\ref{fig:fig2.eps}のように$y\leq-\sqrt{x}$で級数は減衰しているので,積分区間を$(-\infty,\infty)$に拡張し
+\begin{align}
+  {\bf\Gamma}(x+1)&\simeq{\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\infty}dy\ \exp\left[-\cfrac{y^2}{2}+\cfrac{y^3}{3\sqrt{x}}-\cfrac{y^4}{4x}+\cdots\right]
+\end{align}
+を得る.
+\begin{table}[bhtp]
+\caption{増減表}
+\label{tab:zougenhyo}
+\centering
+\begin{tabular}{c|ccc}
+$\tau$&$\cdots$&1&$\cdots$\\
+\hline
+$\frac{dh}{d\tau}$&$-$&0&$+$\\
+$h(\tau)$&$\searrow$&1&$\nearrow$
+\end{tabular}
+\end{table}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \mfig[width=7cm]{fig1.eps}{$e^{-xh(\tau)}$の減衰}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \mfig[width=7cm]{fig2.eps}{$x=-\sqrt{x}$と級数との関係}
+  \end{minipage}
+\end{figure}
+\newpage
+\subsection{}

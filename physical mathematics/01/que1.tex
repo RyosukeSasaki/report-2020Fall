@@ -1,0 +1,62 @@
+\setcounter{section}{1}
+\subsection{}
+与式を$x$, $y$で微分すると,Cauchy-Riemannの方程式より以下を得る.
+\begin{align}
+  \label{1a_x}
+  u_x+v_x=u_x-u_y=v_x+v_y=3(x^2+2xy-y^2)\\
+  \label{1a_y}
+  u_y+v_y=u_x+u_y=-v_x+v_y=3(x^2-2xy-y^2)
+\end{align}
+これらを連立すると
+\begin{subequations}
+  \begin{align}
+    u_x&=3(x^2-y^2)\\
+    u_y&=-6xy\\
+    v_x&=6xy\\
+    v_y&=3(x^2-y^2)
+  \end{align}
+\end{subequations}
+であり,したがって
+\begin{align}
+  u(x,y)&=x^3-3xy^2+C_1\\
+  v(x,y)&=3x^2y-y^3+C_2
+\end{align}
+となる.ここで$C_1,\ C_2\in\mathbb{C}$は積分定数である.一方$u+v=(x-y)(x^2+4xy+y^2)$なので
+\begin{align}
+  C_1+C_2=0
+\end{align}
+を満たす必要がある.以上より求める$f(z)$は
+\begin{align*}
+  f(z)&=x^3-3xy^2+i(3x^2y-y^3)+C\\
+  &=(x+iy)^3+C\\
+  &=z^3+C\qquad(C=C_1+iC_2)
+\end{align*}
+\newpage
+\subsection{}
+与式を$x$, $y$について1階, 2階偏微分すると
+\begin{subequations}
+\begin{align}
+  \label{1bux}
+  u_x=v_y&=\frac{y^2-x^2}{(x^2+y^2)^2}\\
+  \label{1buy}
+  u_y=-v_x&=-\cfrac{2xy}{(x^2+y^2)^2}\\
+  u_{xx}&=\cfrac{2x(x^2-3y^2)}{(x^2+y^2)^3}\\
+  u_{yy}&=-\cfrac{2x(x^2-3y^2)}{(x^2+y^2)^3}
+\end{align}
+\end{subequations}
+となる.したがって
+\begin{align}
+  u_{xx}+u_{yy}=0
+\end{align}
+とラプラス方程式を満たし,これは調和関数である.また(\ref{1bux}), (\ref{1buy})より
+\begin{align}
+  v(x,y)=-\cfrac{y}{x^2+y^2}+C\\
+\end{align}
+となる.ここで$C\in\mathbb{C}$は積分定数である.したがって求める$f(z)$は
+\begin{align*}
+  f(z)&=\cfrac{x-iy}{x^2+y^2}+iC\\
+  &=\cfrac{\overline{z}}{z^2}+iC\\
+  &=\cfrac{1}{z}+iC
+\end{align*}
+ただし$f(z)$の実部が$u$なので$C\in\mathbb{R}$である.
+\newpage

@@ -1,0 +1,36 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}-(\alph{subsection})}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+
+\makeatletter
+\renewcommand{\theequation}{% 式番号の付け方
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+
+\begin{document}
+\title{物理数学 第一回レポート}
+\author{佐々木良輔}
+\maketitle
+\input{que1.tex}
+\input{que2.tex}
+\end{document}
