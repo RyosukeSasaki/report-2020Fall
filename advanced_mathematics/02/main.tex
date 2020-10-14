@@ -1,0 +1,38 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\renewcommand{\thesection}{\arabic{section}.}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+
+\begin{document}
+学籍番号 61908697\qquad 物理学科\qquad 佐々木良輔\\
+(1)\\
+\begin{align}
+  f(x)=\sum_{n=1}^{\infty}(-1)^{n-1}\cfrac{2}{n}\sin(nx)
+\end{align}
+\mfig[width=12cm]{fig1.eps}{$f(x)$と1次, 5次, 9次の級数}
+\newpage
+(2)\\
+\begin{align}
+  f(x)=\cfrac{\pi}{4}+\sum_{n=1}^{\infty}(-1)^{n-1}\cfrac{\sin(nx)}{n}-\sum_{n=1}^{\infty}\cfrac{2\cos((2n-1)x)}{(2n-1)^2\pi}
+\end{align}
+\mfig[width=12cm]{fig2.eps}{$f(x)$と1次, 5次, 9次の級数}
+\begin{flushright}
+  gnuplotで描画\\以上
+\end{flushright}
+\end{document}
