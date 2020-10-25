@@ -52,6 +52,7 @@ $x\gg1$のとき,図\ref{fig:fig1.eps}のように$e^{-xh(\tau)}$は急激に減
 \end{align}
 ただし図\ref{fig:fig2.eps}のように$y\leq-\sqrt{x}$で級数は減衰しているので,積分区間を$(-\infty,\infty)$に拡張し
 \begin{align}
+  \label{res_2_b}
   {\bf\Gamma}(x+1)&\simeq{\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\infty}dy\ \exp\left[-\cfrac{y^2}{2}+\cfrac{y^3}{3\sqrt{x}}-\cfrac{y^4}{4x}+\cdots\right]
 \end{align}
 を得る.
@@ -76,3 +77,43 @@ $h(\tau)$&$\searrow$&1&$\nearrow$
 \end{figure}
 \newpage
 \subsection{}
+(\ref{res_2_b})を再掲する.
+\setcounter{equation}{14}
+\begin{align}
+  {\bf\Gamma}(x+1)&\simeq{\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\infty}dy\ \exp\left[-\cfrac{y^2}{2}+\cfrac{y^3}{3\sqrt{x}}-\cfrac{y^4}{4x}+\cdots\right]\\
+  \label{product}
+  &={\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\infty}dy\ {\rm e}^{-\frac{y^2}{2}}\cdot{\rm e}^{\frac{y^3}{3\sqrt{x}}}\cdot{\rm e}^{-\frac{y^4}{4x}}\cdots
+\end{align}
+ここで被積分項を$\frac{1}{\sqrt{x}}$について展開し, $\frac{1}{x}$までの項を拾うと
+\begin{align}
+  {\rm e}^{-\frac{y^2}{2}}\cdot{\rm e}^{\frac{y^3}{3\sqrt{x}}}\cdot{\rm e}^{-\frac{y^4}{4x}}\cdots
+  &={\rm e}^{-\frac{y^2}{2}}(1+\frac{y^3}{3\sqrt{x}}+\frac{y^6}{18x}\cdots)(1-\frac{y^4}{4x}+\cdots)\\
+  &={\rm e}^{-\frac{y^2}{2}}(1+\frac{y^3}{3\sqrt{x}}-\frac{y^4}{4x}+\frac{y^6}{18x}\cdots)
+\end{align}
+したがって(\ref{product})は
+\begin{align}
+  \label{series}
+  {\bf\Gamma}(x+1)&\simeq{\rm e}^{-x}x^{x+\frac{1}{2}}\int^{\infty}_{-\infty}dy\ {\rm e}^{-\frac{y^2}{2}}(1+\frac{y^3}{3\sqrt{x}}-\frac{y^4}{4x}+\frac{y^6}{18x}\cdots)
+\end{align}
+と展開される.ここで以下の積分を考える.
+\begin{align}
+  {\rm I}_n=\int^{\infty}_{-\infty}x^n{\rm e}^{-\frac{x^2}{2}}dx\qquad(n\in\mathbb{N})
+\end{align}
+ここで$n:奇数$のとき,被積分関数は奇関数なので
+\begin{align}
+  {\rm I}_n=0
+\end{align}
+である.一方で$n:偶数$のとき$m\in\mathbb{N}$を用いて
+\begin{align}
+  {\rm I}_{2m}&=\int^{\infty}_{-\infty}x^{2m}{\rm e}^{-\frac{x^2}{2}}dx\\
+  &=-\left[x^{2m-1}{\rm e}^{-\frac{x^2}{2}}\right]^{\infty}_{-\infty}+(2m-1)\int^{\infty}_{-\infty}x^{2(n-1)}{\rm e}^{-\frac{x^2}{2}}dx\\
+  &=(2m-1){\rm I}_{2n-2}\\
+  &=(2m-1)!!\int^{\infty}_{-\infty}{\rm e}^{-\frac{x^2}{2}}dx\\
+  &=(2m-1)!!\sqrt{2\pi}
+\end{align}
+したがって(\ref{series})は
+\begin{align}
+  {\bf\Gamma}(x+1)&\simeq{\rm e}^{-x}x^{x+\frac{1}{2}}\sqrt{2\pi}(1-\frac{1}{4x}\cdot 3+\frac{1}{18x}\cdot 3\cdot 5+\cdots)\\
+  &=\sqrt{2\pi}{\rm e}^{-x}x^{x+\frac{1}{2}}(1+\frac{1}{12x}+\cdots)
+\end{align}
+となる.
