@@ -1,0 +1,113 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\bibliographystyle{jplain}
+\renewcommand{\thesubsubsection}{\arabic{section}-\arabic{subsection}.(\alph{subsubsection})}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\titleformat*{\subsubsection}{\bfseries}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\setsections}[3]{
+\setcounter{section}{#1}
+\setcounter{subsection}{#2}
+\setcounter{subsubsection}{#3}
+}
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+\def\product<#1>{\langle #1 \rangle}
+
+\begin{document}
+\title{物理学演習第1 No.1, 2レポート}
+\author{佐々木良輔}
+\date{}
+\maketitle
+\setsections{1}{1}{3}
+\subsubsection{}
+関数$f(x)=x^2$をFourier級数で表わせ\\
+$f(x)$は偶関数なので
+\begin{align*}
+  B_n&=0\\
+  A_0&=\frac{1}{\pi}\int^{\pi}_{-\pi}x^2{\rm d}x=\frac{2}{3}\pi^2\\
+  A_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}x^2\cos nx{\rm d}x\\
+  &=\frac{1}{\pi}\biggl\{\biggl[x^2\frac{\sin nx}{n}\biggr]^{\pi}_{-\pi}-\frac{2}{n}\int^{\pi}_{-\pi}x\sin nx{\rm d}x\biggr\}\\
+  &=-\frac{2}{n\pi}\biggl\{\biggl[-x\frac{\cos nx}{n}\biggr]^{\pi}_{-\pi}+\frac{1}{n}\int^{\pi}_{-\pi}\cos nx{\rm d}x\biggr\}\\
+  &=\frac{2}{n^2\pi}(\pi\cos n\pi+\pi\cos n\pi)\\
+  &=\frac{4}{n^2}\cos n\pi\\
+  &=\frac{4}{n^2}(-1)^n
+\end{align*}
+以上から
+\begin{align}
+  \label{1-1-d}
+  f(x)=\frac{\pi^2}{3}+4\sum^{\infty}_{n=1}\frac{(-1)^n}{n^2}\cos nx
+\end{align}
+\subsubsection{}
+\noindent(i)\\
+(\ref{1-1-d})式において$x=\pi$とすると
+\begin{align*}
+  f(\pi)&=\frac{\pi^2}{3}+4\sum^{\infty}_{n=1}\frac{(-1)^n}{n^2}\cos n\pi\\
+  &=\frac{\pi^2}{3}+4\sum^{\infty}_{n=1}\frac{(-1)^{2n}}{n^2}=\pi^2\\
+  &\therefore\zeta(2)=\sum^{\infty}_{n=1}\frac{1}{n^2}=\frac{\pi^2}{6}
+\end{align*}
+(ii)\\
+(\ref{1-1-d})式において$x=0$とすると
+\begin{align*}
+  f(0)=\frac{\pi^2}{3}+4\sum^{\infty}_{n=1}\frac{(-1)^n}{n^2}=0
+\end{align*}
+両辺に$-1$を掛けると
+\begin{align*}
+  -\frac{\pi^2}{3}+4\sum^{\infty}_{n=1}\frac{(-1)^{n+1}}{n^2}&=0\\
+  -{\rm Li}_2(-1)=\sum^{\infty}_{n=1}\frac{(-1)^{n+1}}{n^2}&=\frac{\pi^2}{12}
+\end{align*}
+\setsections{2}{3}{3}
+\subsubsection{}
+$A=x$, $B=p$としたとき交換関係を考える.
+\begin{align*}
+  [x,p]\psi&=x\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}\psi-\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}x\psi\\
+  &=x\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}\psi-\left(\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}x\cdot\psi+\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}\psi\cdot x\right)\\
+  &=-\frac{\hbar}{i}\psi=i\hbar\psi
+\end{align*}
+したがって$[x,p]=i\hbar$であり$C=\hbar$となる.
+以上とKennard-Robertsonの不等式から
+\begin{align*}
+  \Delta x\Delta p\geq\frac{\hbar}{2}
+\end{align*}
+が示された.
+
+また等号成立時は$I(\lambda)=\product<(\lambda\tilde{A}+i\tilde{B})\psi,(\lambda\tilde{A}+i\tilde{B})\psi>=0$より$(\lambda\tilde{A}+i\tilde{B})\psi=0$である.
+ここで
+\begin{align*}
+  \tilde{x}&=x-\product<x>\\
+  \tilde{p}&=\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}-\product<p>\\
+\end{align*}
+なので$(\lambda\tilde{A}+i\tilde{B})\psi=0$は以下のように書き換わる.
+\begin{align*}
+  \left[\lambda(x-\product<x>)+\hbar\frac{\rm d}{{\rm d}x}-i\product<p>\right]\psi=0
+\end{align*}
+この微分方程式を解く.
+\begin{align*}
+  \frac{{\rm d}\psi}{{\rm d}x}&=\left[-\frac{\lambda}{\hbar}(x-\product<x>)+\frac{i}{\hbar}\product<p>\right]\psi
+\end{align*}
+変数分離法を用いると
+\begin{align*}
+  \int\frac{{\rm d}\psi}{\psi}&=\int{\rm d}x\left(-\frac{\lambda}{\hbar}(x-\product<x>)+\frac{i}{\hbar}\product<p>\right)\\
+  \log|\psi|&=-\frac{\lambda}{2\hbar}(x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\\
+  |\psi|&=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)
+\end{align*}
+右辺は正なので絶対値をはずし
+\begin{align*}
+  \psi(x)&=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)\\
+  &=A\exp\left(\left(x-\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2\right)\qquad(A:={\rm e}^{\product<x>^2+C-\left(\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2})
+\end{align*}
+となり,これは確かにガウス関数である.
+\end{document}
