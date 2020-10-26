@@ -101,13 +101,13 @@ $A=x$, $B=p$としたとき交換関係を考える.
 変数分離法を用いると
 \begin{align*}
   \int\frac{{\rm d}\psi}{\psi}&=\int{\rm d}x\left(-\frac{\lambda}{\hbar}(x-\product<x>)+\frac{i}{\hbar}\product<p>\right)\\
-  \log|\psi|&=-\frac{\lambda}{2\hbar}(x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\\
-  |\psi|&=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)
+  \log\psi&=-\frac{\lambda}{2\hbar}(x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\\
+  \psi&=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)\\
+  &=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)\\
 \end{align*}
-右辺は正なので絶対値をはずし
 \begin{align*}
-  \psi(x)&=\exp\left((x-\product<x>)^2+\frac{i}{\hbar}\product<p>x+C\right)\\
-  &=A\exp\left(\left(x-\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2\right)\qquad(A:={\rm e}^{\product<x>^2+C-\left(\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2})
+  \therefore\psi(x)&=A\exp\left(\left(x-\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2\right)\qquad
+  (A:={\rm e}^{\product<x>^2+C-\left(\frac{2\product<x>+\frac{i}{\hbar}\product<p>}{2}\right)^2})
 \end{align*}
 となり,これは確かにガウス関数である.
 \end{document}
