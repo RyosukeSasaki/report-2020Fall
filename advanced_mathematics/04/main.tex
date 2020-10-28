@@ -1,0 +1,46 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\setsections}[3]{
+\setcounter{section}{#1}
+\setcounter{subsection}{#2}
+\setcounter{subsubsection}{#3}
+}
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+
+\begin{document}
+学籍番号 61908697\qquad 物理学科\qquad 佐々木良輔\\
+(1)\\
+周期を$[-\frac{T_0}{2},\frac{T_0}{2}]$とする.パルス幅が$d$のとき
+\begin{align}
+  C_0&=\frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}}f(t){\rm d}t\nonumber\\
+  &=\frac{1}{T_0}\int^{\frac{d}{2}}_{-\frac{d}{2}}A{\rm d}t\nonumber\\
+  &=\frac{Ad}{T_0}\\
+  C_n&=\frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}}f(t){\rm e}^{-in\omega_0t}{\rm d}t\nonumber\\
+  &=\frac{A}{T_0}\int^{\frac{d}{2}}_{-\frac{d}{2}}{\rm e}^{-in\omega_0t}dt\nonumber\\
+  &=\frac{2A}{T_0n\omega_0}\frac{1}{2i}({\rm e}^{in\omega_0t}-{\rm e}^{-in\omega_0t})\nonumber\\
+  &=\frac{2A}{T_0n\omega_0}\sin\Bigl(\frac{n\omega_0d}{2}\Bigr)\nonumber\\
+  &=\frac{Ad}{T_0}\frac{\sin\Bigl(\frac{n\omega_0d}{2}\Bigr)}{\frac{n\omega_0d}{2}}
+\end{align}
+したがって$T_0=\frac{1}{4}$, $d=\frac{1}{20}$のとき振幅スペクトル$|C_n|$は下図のようになる.
+\mfig[width=10cm]{fig1.eps}{振幅スペクトル}
+\newpage
+(2)\\
+(1)の結果を用いる.$T_0=\frac{1}{2}$, $d=\frac{1}{20}$のとき振幅スペクトル$|C_n|$は下図のようになる.
+\mfig[width=10cm]{fig2.eps}{振幅スペクトル}
+\end{document}
