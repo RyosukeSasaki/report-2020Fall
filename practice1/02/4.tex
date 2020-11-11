@@ -1,0 +1,95 @@
+\setsections{4}{1}{2}
+\subsubsection{}
+$x<0$のとき, $V(x)=0$よりSchr\"{o}dinger方程式は
+\begin{align}
+  \left[-\frac{\hbar^2}{2m}\frac{\rm d^2}{{\rm d}x^2}+V(x)\right]\psi(x)&=E\psi(x)\\
+  \frac{\rm d^2}{{\rm d}x^2}\psi_-(x)&=-\frac{2m}{\hbar^2}E\psi_-(x)
+\end{align}
+$E>0$より解は以下のようになる.
+\begin{align}
+  \psi_-(x)=A{\rm e}^{ikx}+B{\rm e}^{-ikx}\qquad\left(E=\frac{k^2\hbar^2}{2m}\right)
+\end{align}
+$x>0$のとき, $V(x)=V_0$よりSchr\"{o}dinger方程式は
+\begin{align}
+  \left[-\frac{\hbar^2}{2m}\frac{\rm d^2}{{\rm d}x^2}+V(x)\right]\psi(x)&=E\psi(x)\\
+  \frac{\rm d^2}{{\rm d}x^2}\psi_+(x)&=-\frac{2m}{\hbar^2}(E-V_0)\psi_+(x)
+\end{align}
+$E-V_0>0$より解は以下のようになる.
+\begin{align}
+  \psi_+(x)=C{\rm e}^{i\kappa x}+D{\rm e}^{-i\kappa x}\qquad\left(E-V_0=\frac{\kappa^2\hbar^2}{2m}\right)
+\end{align}
+波は$x$負の方向から入射し$x=0$で一部反射,透過する状態を考えているので$x>0$の領域には$x$正方向の波は存在しない.
+したがって$D=0$とする.接続条件は
+\begin{align}
+  &\begin{cases}
+    \psi_-(0)&=\psi_+(0)\\
+    \psi_-'(0)&=\psi_+'(0)
+  \end{cases}\\\Leftrightarrow
+  &\begin{cases}
+    A+B&=C\\
+    k(A-B)&=\kappa C
+  \end{cases}\\\Leftrightarrow
+    &\cfrac{A}{B}=\cfrac{k+\kappa}{k-\kappa},\quad
+    \cfrac{A}{C}=\cfrac{k+\kappa}{2k}
+\end{align}
+以上より入射波,反射波,透過波についての解$\psi_I(x)$, $\psi_R(x)$, $\psi_T(x)$は
+\begin{align}
+  \psi_I(x)&=A{\rm e}^{ikx}\\
+  \psi_R(x)&=B{\rm e}^{-ikx}\\
+  \psi_T(x)&=C{\rm e}^{i\kappa x}
+\end{align}
+それぞれの流れの密度$j_I$, $j_R$, $j_T$は
+\begin{align}
+  j_I&=\frac{1}{m}{\rm Re}\left(\psi_I^*\frac{\hbar}{i}\frac{\rm d}{{\rm d}x}\psi_I\right)\\
+  &=\frac{1}{m}{\rm Re}\left(A^*{\rm e}^{-ikx}\frac{\hbar}{i}Aik{\rm e}^{ikx}\right)\\
+  &=\frac{\hbar k}{m}|A|^2
+\end{align}
+同様に
+\begin{align}
+  j_R&=-\frac{\hbar k}{m}|B|^2\\
+  j_T&=\frac{\hbar \kappa}{m}|C|^2
+\end{align}
+したがって反射率$R$は(17)より
+\begin{align}
+  R&=-\frac{j_R}{j_I}\\
+  &=\left(\frac{k-\kappa}{k+\kappa}\right)^2\\
+  &=\left(\frac{\sqrt{E}-\sqrt{E-V_0}}{\sqrt{E}+\sqrt{E-V_0}}\right)^2\nonumber
+\end{align}
+同様に透過率$T$は
+\begin{align}
+  T&=\frac{j_T}{j_I}\\
+  &=\frac{\kappa}{k}\left|\frac{C}{A}\right|^2\\
+  &=\frac{4\sqrt{E(E-V_0)}}{(\sqrt{E}+\sqrt{E-V_0})^2}\nonumber
+\end{align}
+以上から
+\begin{align*}
+  R+T&=\left(\frac{\sqrt{E}-\sqrt{E-V_0}}{\sqrt{E}+\sqrt{E-V_0}}\right)^2+\frac{4\sqrt{E(E-V_0)}}{(\sqrt{E}+\sqrt{E-V_0})^2}\\
+  &=1
+\end{align*}
+\newpage
+\subsubsection{}
+$\epsilon:=\frac{E}{V_0}$とすると
+\begin{align}
+  T&=\frac{4\sqrt{E(E-V_0)}}{(\sqrt{E}+\sqrt{E-V_0})^2}\\
+  &=\frac{4\sqrt{\frac{E}{V_0}(\frac{E}{V_0}-1)}}{(\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1})^2}\\
+  &=\frac{4\sqrt{\epsilon(\epsilon-1)}}{(\sqrt{\epsilon}+\sqrt{\epsilon-1})^2}
+\end{align}
+ここで$0\leq\epsilon-1\ll1$とし$\epsilon$の2乗以上の項を近似すると
+\begin{align}
+  T&=\frac{4\sqrt{\epsilon^2-\epsilon}}{\sqrt{\epsilon^2}+\sqrt{(\epsilon-1)^2}+2\sqrt{\epsilon-1}}\\
+  &\simeq\frac{4\sqrt{1-\epsilon}}{1+0+2\sqrt{\epsilon-1}}\\
+  &=4\sqrt{1-\epsilon}\left(1+2\sqrt{\epsilon-1}\right)^{-1}\\
+  &\simeq4\sqrt{1-\epsilon}\left(1-2\sqrt{\epsilon-1}\right)\\
+  &=4\sqrt{1-\epsilon}-8\sqrt{1-\epsilon^2}\\
+  &\simeq4\sqrt{1-\epsilon}\nonumber
+\end{align}
+3行目から4行目の式変形において$\sqrt{\epsilon-1}\ll1$から$(1+x)^\alpha=1+\alpha x$を用いた.\\
+また$\epsilon\gg1$として$\epsilon-1\simeq\epsilon$とすると
+\begin{align}
+  T&=\frac{4\sqrt{\epsilon^2-\epsilon}}{(\sqrt{\epsilon}+\sqrt{\epsilon-1})^2}\\
+  &\simeq\frac{4\sqrt{\epsilon^2-\epsilon}}{(2\sqrt{\epsilon})^2}\\
+  &=\sqrt{1(1-\frac{1}{\epsilon})}\\
+  &\simeq1-\frac{1}{2\epsilon}\nonumber
+\end{align}
+また図2にこの関数の概形を示す.
+\mfig[width=10cm]{fig2.png}{概形}

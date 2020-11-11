@@ -1,0 +1,41 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\bibliographystyle{jplain}
+\renewcommand{\thesubsubsection}{\arabic{section}-\arabic{subsection}.(\alph{subsubsection})}
+
+
+\usepackage{url}
+
+\usepackage{empheq}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\titleformat*{\subsubsection}{\bfseries}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\setsections}[3]{
+  \setcounter{section}{#1}
+  \setcounter{subsection}{#2}
+  \setcounter{subsubsection}{#3}
+  }
+  \newcommand{\mfig}[3][width=15cm]{
+    \begin{center}
+      \includegraphics[#1]{#2}
+      \fgcaption{#3 \label{fig:#2}}
+    \end{center}
+    }
+    \def\product<#1>{\langle #1 \rangle}
+
+\begin{document}
+\title{物理学演習第1 No.3, 4レポート}
+\author{佐々木良輔}
+\date{}
+\maketitle
+\input{3.tex}
+\newpage
+\input{4.tex}
+\end{document}

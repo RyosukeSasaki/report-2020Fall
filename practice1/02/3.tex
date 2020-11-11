@@ -1,0 +1,49 @@
+\setsections{3}{3}{3}
+\subsubsection{}
+$X=kL=\frac{\sqrt{2mE}}{\hbar}L$, $Y=\kappa L=\frac{\sqrt{2m(V_0-E)}}{\hbar}L$とすると(b), (c)より以下が成り立つ.
+\begin{align}
+  Y&=X\tan X\\
+  Y&=-X\cot X\\
+  X^2+Y^2&=\frac{2mV_0}{\hbar^2}L^2
+\end{align}
+$X$, $Y$はエネルギー$E$, $V_0$に依る.したがって(3)と(1), (2)を同時に満たす点がエネルギー固有値となる.
+ここで(1)は$X=n\pi$で$Y=0$となり(2)は$X=(n+\frac{1}{2})\pi$で$Y=0$となる.したがってグラフの交点の個数は
+\begin{align}
+  \begin{cases}
+    2n+1&\left(n\pi<X\leq(n+\frac{1}{2})\pi\right)\\
+    2(n+1)&\left((n+\frac{1}{2})\pi<X\leq(n+1)\pi\right)\\
+  \end{cases}
+\end{align}
+となる.以上から束縛状態の数$N(V_0)$は
+\begin{align*}
+  N(V_0)=
+  \begin{cases}
+    2n+1&\left(\frac{\hbar^2}{2mL^2}n^2\pi^2<V_0\leq\frac{\hbar^2}{2mL^2}(n+\frac{1}{2})^2\pi^2\right)\\
+    2(n+1)&\left(\frac{\hbar^2}{2mL^2}(n+\frac{1}{2})^2\pi^2<V_0\leq\frac{\hbar^2}{2mL^2}(n+1)^2\pi^2\right)\\
+  \end{cases}
+\end{align*}
+と与えられる.
+\mfig[width=5cm]{fig1.png}{(1)(赤線), (2)(青線)のプロット}
+\newpage
+\subsubsection{}
+$2V_0L=g\qquad ({\rm const})$としつつ$L\rightarrow0$としたとき
+\begin{align}
+  X^2+Y^2=\frac{mg}{\hbar^2}L\rightarrow0
+\end{align}
+となる.したがって束縛状態は$n=0$の基底状態のみを持ち$N(V_0)=1$となる.\\
+また$X\simeq0$とできるので(1)式は
+\begin{align}
+  Y\simeq X^2
+\end{align}
+になる.したがって(3)と(6)を連立し
+\begin{align}
+  Y+Y^2&=\frac{mg}{\hbar^2}L\nonumber\\
+  \therefore Y&=\frac{1}{2}\left(\sqrt{\frac{4mg}{\hbar^2}L+1}-1\right)\qquad(\because y>0)\\
+  &\simeq\frac{mg}{\hbar^2}L
+\end{align}
+最後の式変形では$x\ll1$から$\sqrt{1+x}\simeq1+\frac{x}{2}$を用いた.
+ここで$V_0-E=\frac{Y^2}{L^2}\frac{\hbar^2}{2m}$なので
+\begin{align*}
+  E-V_0=-\frac{mg^2}{2\hbar^2}
+\end{align*}
+となる.
