@@ -1,0 +1,79 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\setsections}[3]{
+\setcounter{section}{#1}
+\setcounter{subsection}{#2}
+\setcounter{subsubsection}{#3}
+}
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+
+\begin{document}
+第6回 1-(3)
+\begin{flushright}
+  佐々木良輔
+\end{flushright}
+問題：\par
+\setcounter{equation}{1}
+\begin{align}
+  \begin{cases}
+    (\Delta\phi-\epsilon\mu\partial^2_t\phi)+\partial_t({\rm div}{\bm A}+\epsilon\mu\partial_t\phi)=-\cfrac{\rho}{\epsilon}\\
+    (\Delta{\bm A}-\epsilon\mu\partial^2_t{\bm A})+{\rm grad}({\rm div}{\bm A}+\epsilon\mu\partial_t\phi)=-\mu{\bm i}
+  \end{cases}
+\end{align}
+\begin{align*}
+  \phi_L=\phi+\partial_t u_L,\qquad {\bm A}_L={\bm A}-{\rm grad}\ u_L
+\end{align*}
+式(2)が上のゲージ変換において$u_L$が適当な関係式を満たすとき以下のように書き換わることを示せ.
+\begin{align}
+  \begin{cases}
+    \Delta\phi_L-\epsilon\mu\partial_t^2\phi_L=-\cfrac{\rho}{\epsilon}\\
+    \Delta{\bm A}_L-\epsilon\mu\partial_t^2{\bm A}_L=-\mu{\bm i}
+  \end{cases}
+\end{align}\hrulefill\\
+解答：\par
+式(2)にゲージ変換を適用すると
+\begin{align*}
+  \begin{cases}
+    (\Delta\phi_L-\epsilon\mu\partial^2_t\phi_L)+\partial_t({\rm div}{\bm A}_L+\epsilon\mu\partial_t\phi_L)=-\cfrac{\rho}{\epsilon}\\
+    (\Delta{\bm A}_L-\epsilon\mu\partial^2_t{\bm A}_L)+{\rm grad}({\rm div}{\bm A}_L+\epsilon\mu\partial_t\phi_L)=-\mu{\bm i}
+  \end{cases}
+\end{align*}
+このとき
+\begin{align}
+  {\rm div}{\bm A}_L+\epsilon\mu\partial_t\phi_L=0\tag{1'}
+\end{align}
+ならば式(3)となる.式(1')に$\phi_L$, ${\bm A}_L$を代入すると.
+\begin{align*}
+  {\rm div}{\bm A}-{\rm div\ grad}\ u_L+\epsilon\mu\partial_t(\phi+\partial_t u_L)=0
+\end{align*}
+${\rm div\ grad}=\Delta$より$u_L$に関する項を左辺に揃えると
+\begin{align*}
+  (\Delta-\epsilon\mu\partial_t^2)u_L={\rm div}{\bm A}+\epsilon\mu\partial_t\phi\tag{2'}
+\end{align*}
+よって式(1')を満たす$u_L$が存在し,それが式(2')から求まることがわかる.したがって式(2')のもとで式(2)は式(3)のように書き換わる.式(2')を満たすゲージ変換をLorentz変換と呼ぶ.\par
+ただしLorentz変換は以下を満たす$\chi$について自由度が残っている.
+\begin{align}
+  (\Delta-\epsilon\mu\partial_t^2)\chi=0\tag{3'}
+\end{align}
+実際に式(2')と辺々足すことで
+\begin{align*}
+  (\Delta-\epsilon\mu\partial_t^2)(u_L+\chi)={\rm div}{\bm A}+\epsilon\mu\partial_t\phi
+\end{align*}
+となり$u_L+\chi$という変換のもとで式(3)が得られることがわかる.
+\end{document}
