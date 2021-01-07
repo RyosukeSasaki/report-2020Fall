@@ -1,0 +1,82 @@
+\subsubsection*{1-(イ)}
+Maxwell方程式を以下に示す.
+\begin{align*}
+  \begin{cases}
+    \divergence{\bm D}=\rho_{true}        & {\rm (Gaussの法則(電気))}            \\
+    \divergence{\bm B}=0                  & {\rm (Gaussの法則(磁気))}            \\
+    \rot{\bm E}=-\partial_t{\bm B}        & {\rm (Faradayの法則)}                \\
+    \rot{\bm H}={\bm j}+\partial_t{\bm D} & {\rm (Maxwell{\text -}Ampereの法則)}
+  \end{cases}
+\end{align*}
+これを${\bm A}$, $\phi$で書き換える.
+
+① 磁気に関するGaussの法則\\
+${\bm B}=\rot{\bm A}$より
+\begin{align*}
+  \divergence{\bm B} & =\divergence(\rot{\bm A}) \\
+                     & =0
+\end{align*}
+であり,恒等式$\forall{\bm A},\ \divergence(\rot{\bm A})=0$より自明である.\\
+
+② Faradayの法則\\
+${\bm B}=\rot{\bm A}$より同様に
+\begin{align*}
+  \rot{\bm E}+\partial_t{\bm B}       & =0 \\
+  \rot{\bm E}+\partial_t(\rot{\bm A}) & =0 \\
+  \rot({\bm E}+\partial_t{\bm A})     & =0
+\end{align*}
+ここで${\bm E}=-\grad\phi-\partial_t{\bm A}$より
+\begin{align*}
+  \rot(-\grad\phi)=0
+\end{align*}
+であり,恒等式$\forall\phi,\ \rot(\grad\phi)=0$より自明である.\\
+
+③ Maxwell-Ampereの法則\\
+${\bm B}=\mu{\bm H}$と恒等式$\nabla\times(\nabla\times{\bm A})=\grad(\divergence{\bm A})-\laplacian{\bm A}$から
+\begin{align*}
+  (左辺) & = \frac{1}{\mu}\rot{\bm H}                                  \\
+         & =\frac{1}{\mu}\rot(\rot{\bm A})                             \\
+         & =\frac{1}{\mu}(\grad(\divergence{\bm A})-\laplacian{\bm A})
+\end{align*}
+また${\bm D}=\varepsilon{\bm E}$, ${\bm E}=-\grad\phi-\partial_t{\bm A}$から
+\begin{align*}
+  (右辺) & ={\bm j}+\varepsilon\partial_t{\bm E}                        \\
+         & ={\bm j}+\varepsilon\partial_t(-\grad\phi-\partial_t{\bm A})
+\end{align*}
+以上から
+\begin{align}
+  \frac{1}{\mu}(\grad(\divergence{\bm A})-\laplacian{\bm A})                                            ={\bm j}+\varepsilon\partial_t(-\grad\phi-\partial_t{\bm A}) \notag \\
+  \label{equ:1-b-from-ampere}
+  (\laplacian-\varepsilon\mu\partial_t^2){\bm A}-\grad(\divergence{\bm A}+\varepsilon\mu\partial_t\phi) =-\mu{\bm j}
+\end{align}
+となる.\\
+
+④ 電気に関するGaussの法則\\
+${\bm D}=\varepsilon{\bm E}$, ${\bm E}=-\grad\phi-\partial_t{\bm A}$から
+\begin{align}
+  \divergence{\bm D}                            & =\rho_{true}                     \notag \\
+  \divergence(-\grad\phi-\partial_t{\bm A})     & =\frac{\rho_{true}}{\varepsilon} \notag \\
+  \label{equ:1-b-from-gauss}
+  \laplacian\phi+\divergence(\partial_t{\bm A}) & =-\frac{\rho_{true}}{\varepsilon}
+\end{align}
+となる.\\
+
+ここでLorentz条件$\divergence{\bm A}+\varepsilon\mu\partial_t\phi=0$を課すと(\ref{equ:1-b-from-ampere})式は
+\begin{align}
+  (\laplacian-\varepsilon\mu\partial_t^2){\bm A} =-\mu{\bm j}
+\end{align}
+さらに
+\begin{align*}
+  \divergence(\partial_t{\bm A})=\partial_t(\divergence{\bm A})=-\varepsilon\mu\partial_t^2\phi
+\end{align*}
+より(\ref{equ:1-b-from-gauss})式は
+\begin{align}
+  (\laplacian-\varepsilon\mu\partial_t^2)\phi=-\frac{\rho_{true}}{\varepsilon}
+\end{align}
+となる.以上から${\bm A}$, $\phi$に関して以下を得る.
+\begin{align*}
+  \begin{cases}
+    (\laplacian-\varepsilon\mu\partial_t^2){\bm A} =-\mu{\bm j} \\
+    (\laplacian-\varepsilon\mu\partial_t^2)\phi=-\frac{\rho_{true}}{\varepsilon}
+  \end{cases}
+\end{align*}

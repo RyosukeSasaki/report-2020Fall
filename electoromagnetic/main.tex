@@ -1,0 +1,38 @@
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\bibliographystyle{jplain}
+
+\usepackage{url}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{siunitx}
+
+\usepackage[dvipdfmx]{graphicx}
+\makeatletter
+\def\fgcaption{\def\@captype{figure}\caption}
+\makeatother
+\newcommand{\setsections}[3]{
+\setcounter{section}{#1}
+\setcounter{subsection}{#2}
+\setcounter{subsubsection}{#3}
+}
+\newcommand{\mfig}[3][width=15cm]{
+\begin{center}
+\includegraphics[#1]{#2}
+\fgcaption{#3 \label{fig:#2}}
+\end{center}
+}
+\newcommand{\grad}{\nabla}
+\newcommand{\rot}{\nabla\times}
+\newcommand{\divergence}{\nabla\cdot}
+\newcommand{\laplacian}{\Delta}
+
+\begin{document}
+\title{電磁気学第1 期末レポート}
+\author{61908697 佐々木良輔}
+\date{}
+\maketitle
+\input{1-a.tex}
+\input{1-b.tex}
+\input{1-c.tex}
+\end{document}

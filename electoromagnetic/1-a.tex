@@ -1,0 +1,16 @@
+\subsubsection*{1-(ア)}
+任意の微分可能なスカラー関数$\chi$を用いて${\bm A'}$, $\phi'$を以下のように定義する.
+\begin{align*}
+  {\bm A'} & ={\bm A}+\grad\chi   \\
+  \phi'    & =\phi-\partial_t\chi
+\end{align*}
+このときそれぞれのポテンシャルから得られる磁束密度${\bm B'}$, ${\bm E'}$は
+\begin{align*}
+  {\bm B'} & =\rot{\bm A'}                                                             \\
+           & =\rot{\bm A}+\rot(\grad\chi)                                              \\
+           & =\rot{\bm A}={\bm B}                                                      \\
+  {\bm E'} & =-\grad\phi'-\partial_t{\bm A}                                            \\
+           & =-\grad\phi+\grad(\partial_t\chi)-\partial_t{\bm A}-\partial_t(\grad\chi) \\
+           & =-\grad\phi-\partial_t{\bm A}={\bm E}
+\end{align*}
+となる. $\chi$は任意であったので同じ${\bm B}$, ${\bm E}$を与える${\bm A}$, $\phi$を無数に作り出すことができる.
