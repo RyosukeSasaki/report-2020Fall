@@ -1,0 +1,50 @@
+\subsubsection*{1-(オ)}
+電荷密度$\rho({\bm r})$は$\delta$関数を用いて以下のように表される.
+\begin{align*}
+  \rho({\bm r})=\{-q\delta(y+3a)+q\delta(y+a)+q\delta(y-a)-q\delta(y-3a)\}\delta(x)\delta(z)
+\end{align*}
+${\bm r'_i}$を各電荷の位置ベクトルとすると$|{\bm r'}_1|^2=|{\bm r'}_4|^2=9a^2$, $|{\bm r'}_2|^2=|{\bm r'}_3|^2=a^2$である.四重極子モーメントテンソル$\tilde{Q}$を計算する.
+$x'=z'=0$なので
+\begin{align*}
+  \tilde{Q}_{xx} =\tilde{Q}_{zz} & =\int\rho({\bm r'})(3x'x'-{r'}^2\delta_{11})dV' \\
+                                 & =(-q)(-9a^2)+q(-a^2)+q(-a^2)+(-q)(-9a^2)        \\
+                                 & =16qa^2                                         \\
+\end{align*}
+$x'$, $z'$を含むので
+\begin{align*}
+  \tilde{Q}_{xy}=\tilde{Q}_{yx}=0 \\
+  \tilde{Q}_{yz}=\tilde{Q}_{zy}=0 \\
+  \tilde{Q}_{zx}=\tilde{Q}_{xz}=0
+\end{align*}
+$\tilde{Q}_{xx}+\tilde{Q}_{yy}+\tilde{Q}_{zz}=1$から
+\begin{align*}
+  \tilde{Q}_{yy} & =-32qa^2
+\end{align*}
+以上から
+\begin{align*}
+  \tilde{Q}=\left(
+  \begin{array}{ccc}
+      16qa^2 & 0       & 0      \\
+      0      & -32qa^2 & 0      \\
+      0      & 0       & 16qa^2
+    \end{array}
+  \right)
+\end{align*}
+したがって四重極子モーメント$Q$は
+\begin{align*}
+  Q & =\sum_{i,j}x_ix_j\tilde{Q}_{ij} \\
+    & =16qa^2(x^2+z^2)-32qa^2y^2
+\end{align*}
+スカラーポテンシャル$\phi_Q$は
+\begin{align*}
+  \phi_Q & =\frac{1}{4\pi\varepsilon_0 r^5}\frac{1}{2}Q              \\
+         & =\frac{2qa^2}{\pi\varepsilon_0}\frac{(x^2-2y^2+z^2)}{r^5}
+\end{align*}
+電場ベクトル$(E_x,E_y,E_z)$は
+\begin{align*}
+  \begin{cases}
+    E_x=-\partial_x\phi_Q=\cfrac{2qa^2}{\pi\varepsilon_0}\left(\cfrac{2x}{r^5}-\cfrac{5x(x^2-2y^2+z^2)}{r^7}\right)  \\
+    E_y=-\partial_y\phi_Q=\cfrac{2qa^2}{\pi\varepsilon_0}\left(-\cfrac{4y}{r^5}-\cfrac{5y(x^2-2y^2+z^2)}{r^7}\right) \\
+    E_z=-\partial_z\phi_Q=\cfrac{2qa^2}{\pi\varepsilon_0}\left(\cfrac{2z}{r^5}-\cfrac{5z(x^2-2y^2+z^2)}{r^7}\right)  \\
+  \end{cases}
+\end{align*}

@@ -1,0 +1,38 @@
+\subsubsection*{1-(ウ)}
+ラプラス方程式は以下の方程式である.
+\begin{align*}
+  \laplacian\phi=0
+\end{align*}
+ただし極座標でのラプラシアンは以下で与えられる.
+\begin{align*}
+  \laplacian=\frac{1}{r^2}\partial_r(r^2\partial_r)+\frac{1}{r^2\sin\theta}\partial_\theta(\sin\theta\partial_\theta)+\frac{1}{r^2\sin^2\theta}\partial_\varphi^2
+\end{align*}
+したがって$\phi=R(r)Y(\theta,\varphi)$と変数分離すると
+\begin{align*}
+  \laplacian\phi=\frac{1}{r^2}\partial_r(r^2\partial_r)RY+\frac{1}{r^2\sin\theta}\partial_\theta(\sin\theta\partial_\theta)RY+\frac{1}{r^2\sin^2\theta}\partial_\varphi^2RY=0
+\end{align*}
+両辺$r^2$を掛け, $RY$で割る
+\begin{align*}
+  \frac{r^2}{RY}\cdot\frac{Y}{r^2}\partial_r(r^2\partial_r)R & =-\frac{r^2}{RY}\cdot\frac{R}{r^2\sin\theta}\partial_\theta(\sin\theta\partial_\theta)Y-\frac{r^2}{RY}\cdot\frac{R}{r^2\sin^2\theta}\partial_\varphi^2Y \\
+  \frac{1}{R}\partial_r(r^2\partial_r)R                      & =-\frac{1}{Y}\left\{\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta)Y+\frac{1}{\sin^2\theta}\partial_\varphi^2Y\right\}
+\end{align*}
+両辺はそれぞれ$r$と$\theta,\ \varphi$のみに依る関数なので定数$\lambda$とおける.したがって
+\begin{empheq}[left=\empheqlbrace]{align}
+  \label{equ:1-c-R}
+  &\frac{1}{R}\partial_r(r^2\partial_r)R=\lambda \\
+  \label{equ:1-c-Y}
+  &\frac{1}{Y}\left\{\frac{1}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta)Y+\frac{1}{\sin^2\theta}\partial_\varphi^2Y\right\}=-\lambda
+\end{empheq}
+さらに$Y(\theta,\varphi)=\Theta(\theta)\varPhi(\varphi)$とすると(\ref{equ:1-c-Y})式は以下のように変数分離できる.
+\begin{align*}
+  \sin^2\theta\cdot\frac{1}{\Theta\varPhi}\left\{\frac{\varPhi}{\sin\theta}\partial_\theta(\sin\theta\partial_\theta)\Theta+\frac{\Theta}{\sin^2\theta}\partial_\varphi^2\varPhi\right\} & =-\sin^2\theta\lambda                        \\
+  \frac{1}{\Theta}\sin\theta\partial_\theta(\sin\theta\partial_\theta\Theta)+\lambda\sin^2\theta                                                                                         & =-\frac{1}{\varPhi}\partial_\varphi^2\varPhi
+\end{align*}
+これも同様に定数$\kappa$とおけるので
+\begin{empheq}[left=\empheqlbrace]{align}
+  \label{equ:1-c-Theta}
+  &\frac{1}{\Theta}\sin\theta\partial_\theta(\sin\theta\partial_\theta\Theta)+\lambda\sin^2\theta=\kappa\\
+  \label{equ:1-c-Phi}
+  &\frac{1}{\varPhi}\partial_\varphi^2\varPhi=-\kappa
+\end{empheq}
+よって(\ref{equ:1-c-R})式, (\ref{equ:1-c-Theta})式, (\ref{equ:1-c-Phi})式がそれぞれの微分方程式となる.

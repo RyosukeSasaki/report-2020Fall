@@ -1,0 +1,20 @@
+\subsubsection*{1-(エ)}
+Poisson方程式に対するGreen関数$G({\bm x}-{\bm x'})$は以下で与えられる.
+\begin{align*}
+  G({\bm x}-{\bm x'})=\frac{1}{4\pi|{\bm x}-{\bm x'}|}
+\end{align*}
+したがって$\phi$の解は以下のようになる.
+\begin{align*}
+  \phi({\bm x}) & =\int G({\bm x}-{\bm x'})(-\divergence {\bm J}({\bm x'}))d{\bm x'}                   \\
+                & =\frac{1}{4\pi}\int \frac{-\divergence {\bm J}({\bm x'})}{{\bm x}-{\bm x'}}d{\bm x'}
+\end{align*}
+%ここで恒等式$\divergence({\bm A}\phi)=\phi\divergence{\bm A}+{\bm A}\cdot\grad\phi$から
+%\begin{align*}
+%  \phi({\bm x}) & =\frac{1}{4\pi}\int \frac{-\divergence {\bm J}({\bm x'})}{{\bm x}-{\bm x'}}d{\bm x'}                                                                          \\
+%                & =-\frac{1}{4\pi}\int\left(\divergence\left(\frac{{\bm j}({\bm x'})}{{\bm x}-{\bm x'}}\right)-{\bm J}({\bm x'})\grad\frac{1}{{\bm x}-{\bm x'}}\right)d{\bm x'} \\
+%\end{align*}
+%Gaussの発散定理から
+%\begin{align*}
+%  \phi({\bm x}) & =-\frac{1}{4\pi}\int\left(\divergence\left(\frac{{\bm j}({\bm x'})}{{\bm x}-{\bm x'}}\right)-{\bm J}({\bm x'})\grad\frac{1}{{\bm x}-{\bm x'}}\right)d{\bm x'} \\
+%                & =-\frac{1}{4\pi}\int\frac{{\bm j}({\bm x'})\cdot\hat{n}}{{\bm x}-{\bm x'}}d{\bm S}-\frac{1}{4\pi}\int\frac{{\bm J}({\bm x'})}{({\bm x}-{\bm x'})^2}d{\bm x'}
+%\end{align*}
