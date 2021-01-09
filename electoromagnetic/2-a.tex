@@ -1,17 +1,20 @@
 \subsection*{問題}
 \subsubsection*{2-1}
-単位長さあたりの巻数を$n$,半径$a$,長さ$l$の軸に直角に巻いたソレノイドに電流$I$を流すとき,$x$軸上での磁界を求めよ.\\
+単位長さあたりの巻数を$n$,半径$a$,長さ$l$の軸に直角に巻いたソレノイドに電流$I$を流すとき$x$軸上での磁界を求めよ.\\
 【参考：問題7-1-15】
+\mfig[width=8cm]{fig1.png}{}
 \subsubsection*{2-2}
 2-1のソレノイドに透磁率$\mu$の磁性体の芯を入れ電磁石を作る.磁性体の磁気モーメントを求めよ.ただしソレノイド内の等$x$面で磁界は一定であるとする.\\
 【参考：問題6-2-17】
+\mfig[width=8cm]{fig3.png}{}
 \subsubsection*{2-3}
-2-2の電磁石の重さが$w$である.電磁石は図のように中心から距離$d$離れた支点$P$で支えられ東西方向の軸で自由に回転できるとする.
+2-2の電磁石の重さが$w$である.電磁石は図\ref{fig:fig5.png}のように中心から距離$d$離れた支点$P$で支えられ東西方向の軸で自由に回転できるとする.
 これが地磁気の強さ$H$,伏角$i$の北半球の地点に置かれたとき,この磁石を水平に保つための電流$I$を求めよ.\\
 【参考：問題6-1-7.1】
+\mfig[width=8cm]{fig5.png}{}
 \subsection*{解答}
 \subsubsection*{2-1}
-$P$点から距離$x$離れた地点の$dx$には$ndx$巻の電流ループが存在する.図のように$r$, $\theta$を定めると
+$P$点から距離$x$離れた地点の$dx$には$ndx$巻の電流ループが存在する.図\ref{fig:fig2.png}のように$r$, $\theta$を定めると
 \begin{align*}
   x  & =a\cot\theta                                                 \\
   dx & =-\frac{a}{\sin^2\theta}d\theta=-\frac{r}{\sin\theta}d\theta
@@ -24,8 +27,9 @@ $P$点から距離$x$離れた地点の$dx$には$ndx$巻の電流ループが�
 \begin{align*}
   {\bm H}=-\frac{nI}{2}\int^{\theta_2}_{\theta_1}\sin\theta d\theta\hat{x}=\frac{nI}{2}(\cos\theta_2-\cos\theta_1)\hat{x}
 \end{align*}
+\mfig[width=8cm]{fig2.png}{}
 \subsubsection*{2-2}
-図のように$\theta_1'$を取ると$\cos\theta_1'=-\cos\theta_1$である.また
+図\ref{fig:fig4.png}のように$\theta_1'$を取ると$\cos\theta_1'=-\cos\theta_1$である.また
 \begin{align*}
   \cos\theta_1' & =\frac{l-x}{\sqrt{a^2+(l-x)^2}} \\
   \cos\theta_2  & =\frac{x}{\sqrt{a^2+x^2}}
@@ -41,18 +45,20 @@ $P$点から距離$x$離れた地点の$dx$には$ndx$巻の電流ループが�
           & =\frac{nI(\mu-\mu_0)\pi a^2}{2}\left(\left[\sqrt{a^2+x^2}\right]_0^l-\left[\sqrt{a^2+(l-x)^2}\right]_0^l\right)\hat{x} \\
           & =nI(\mu-\mu_0)\pi a^2\sqrt{a^2+l^2}\hat{x}
 \end{align*}
+\mfig[width=8cm]{fig4.png}{}
 \subsubsection*{2-3}
-磁極の強さを$m$とし,図のように$\varphi$をを定めるとモーメントの釣り合いから
+磁極の強さを$m$とし,図\ref{fig:fig6.png}のように$\varphi$をを定めるとモーメントの釣り合いから
 \begin{align*}
-  -Wd\cos\varphi+mH(l-d)\sin(i-\varphi)+mHd\sin(i-\varphi) & =0 \\
-  -Wd\cos\varphi+MH\sin(i-\varphi)                         & =0
+  -wgd\cos\varphi+mH(l-d)\sin(i-\varphi)+mHd\sin(i-\varphi) & =0 \\
+  -wgd\cos\varphi+MH\sin(i-\varphi)                         & =0
 \end{align*}
 これが水平で釣り合っているとき$\varphi=0$から
 \begin{align*}
-  Wd           & =MH\sin i                                                      \\
-  \therefore M & =\frac{Wd}{H\sin i}                                            \\
-  I            & =\frac{Wd}{H\sin i}\frac{1}{n(\mu-\mu_0)\pi a^2\sqrt{a^2+l^2}}
+  wgd          & =MH\sin i                                                       \\
+  \therefore M & =\frac{wgd}{H\sin i}                                            \\
+  I            & =\frac{wgd}{H\sin i}\frac{1}{n(\mu-\mu_0)\pi a^2\sqrt{a^2+l^2}}
 \end{align*}
+\mfig[width=8cm]{fig6.png}{}
 \subsubsection*{問題の意図}
 小型の人工衛星では自身の姿勢角を制御する装置として磁気トルカが用いられる.
 磁気トルカは電磁石による磁気モーメントと地磁気の相互作用によるトルクで姿勢角を制御する装置で,この問題では一次元の場合を考えた.
