@@ -1,0 +1,59 @@
+\subsection*{1-2-(a),(b)}
+以下に各次数のFourier係数を示す.
+\begin{table}[htbp]
+  \caption{$a(x)$のFourier係数}
+  \label{tbl:a}
+  \centering
+  \begin{tabular}{c|cc}
+    \hline
+    次数$n$ & $a_n$                      & $b_n$                          \\
+    \hline \hline
+    0       & $1+(1-{\rm e}^{-\pi})/\pi$ & 0                              \\
+    1       & $(1+{\rm e}^{-\pi})/2\pi$  & $({\rm e}^{-\pi}-3)/2\pi$      \\
+    2       & $(1-{\rm e}^{-\pi})/5\pi$  & $(2-2{\rm e}^{-\pi})/5\pi$     \\
+    3       & $(1+{\rm e}^{-\pi})/10\pi$ & $(9{\rm e}^{-\pi}-11)/30\pi$   \\
+    4       & $(1-{\rm e}^{-\pi})/17\pi$ & $(4-4{\rm e}^{-\pi})/17\pi$    \\
+    5       & $(1+{\rm e}^{-\pi})/26\pi$ & $(25{\rm e}^{-\pi}-27)/130\pi$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \caption{$b(x)$のFourier係数}
+  \label{tbl:b}
+  \centering
+  \begin{tabular}{c|c}
+    \hline
+    次数$n$ & $a_n$                      \\
+    \hline \hline
+    0       & $2(1-{\rm e}^{-\pi})/\pi$  \\
+    1       & $(1+{\rm e}^{-\pi})/\pi$   \\
+    2       & $(1-{\rm e}^{-\pi})/5\pi$  \\
+    3       & $(1+{\rm e}^{-\pi})/10\pi$ \\
+    4       & $(1-{\rm e}^{-\pi})/17\pi$ \\
+    5       & $(1+{\rm e}^{-\pi})/26\pi$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \caption{c(x)について}
+  \label{tbl:c}
+  \centering
+  \begin{tabular}{c|c}
+    \hline
+    次数$n$ & $b_n$                       \\
+    \hline \hline
+    1       & $(1+{\rm e}^{-\pi})/\pi$    \\
+    2       & $(4-4{\rm e}^{-\pi})/5\pi$  \\
+    3       & $(3+3{\rm e}^{-\pi})/5\pi$  \\
+    4       & $(8-8{\rm e}^{-\pi})/17\pi$ \\
+    5       & $(5+5{\rm e}^{-\pi})/13\pi$ \\
+    \hline
+  \end{tabular}
+\end{table}
+\clearpage
+したがって各Fourier級数をプロットすると以下のグラフを得る.
+\mfig[width=10cm]{ax.png}{$a(x)$のグラフ(水色:2次まで,赤:5次まで)}
+\mfig[width=10cm]{bx.png}{$b(x)$のグラフ(水色:2次まで,赤:5次まで)}
+\mfig[width=10cm]{cx.png}{$c(x)$のグラフ(水色:2次まで,赤:5次まで)}

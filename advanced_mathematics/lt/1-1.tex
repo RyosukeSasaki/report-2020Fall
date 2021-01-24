@@ -1,0 +1,90 @@
+\subsection*{1-1}
+\subsubsection*{$a(x)$について}
+$f(x)$を
+\begin{align*}
+  f(x)=\begin{cases}
+    1            & \{-\pi\leq x \leq 0\} \\
+    {\rm e}^{-x} & \{0\leq x \leq \pi\}
+  \end{cases}
+\end{align*}
+で定義する.このときFourier係数は以下で与えられる.まず$a_0$について
+\begin{align*}
+  a_0 & =\frac{1}{\pi}\int^\pi_{-\pi}f(x){\rm d}x                                         \\
+      & =\frac{1}{\pi}\left\{\int^0_{-\pi}{\rm d}x+\int^\pi_0{\rm e}^{-x}{\rm d}x\right\} \\
+      & =1+\frac{1}{\pi}(1-{\rm e}^{-\pi})
+\end{align*}
+次に$a_n$について
+\begin{align*}
+  a_n & =\frac{1}{\pi}\int^\pi_{-\pi}f(x)\cos nx{\rm d}x                                                             \\
+      & =\frac{1}{\pi}\left\{\int^0_{-\pi}1\cdot\cos nx{\rm d}x+\int^{\pi}_0{\rm e}^{-x}\cdot\cos nx{\rm d}x\right\}
+\end{align*}
+ここで$I=\int^\pi_0{\rm e}^{-x}\cdot\cos nx{\rm d}x$とすると,部分積分を用いて
+\begin{align*}
+  I          & =\left[-{\rm e}^{-x}\cos nx\right]^\pi_0-\int^\pi_0n{\rm e}^{-x}\sin nx {\rm d}x \\
+             & =\left[-{\rm e}^{-x}\cos nx\right]^\pi_0+n\left[e^{-x}\sin nx\right]^\pi_0-n^2I  \\
+  \therefore & \qquad I=\frac{{\rm e}^{-\pi}n\sin n\pi-{\rm e}^{-\pi}\cos n\pi+1}{n^2+1}
+\end{align*}
+であるので以下を得る.
+\begin{align*}
+  %a_n&=\frac{1}{\pi}\left\{\frac{\sin n\pi}{n}+\frac{{\rm e}^{-\pi}n\sin n\pi-{\rm e}^{-\pi}\cos n\pi+1}{n^2+1}\right\}
+  a_n & =\frac{1}{\pi}\frac{1-{\rm e}^{-\pi}\cos n\pi}{n^2+1}
+\end{align*}
+同様に$b_n$について
+\begin{align*}
+  b_n & =\frac{1}{\pi}\int^\pi_{-\pi}f(x)\sin nx{\rm d}x                                                             \\
+      & =\frac{1}{\pi}\left\{\int^0_{-\pi}1\cdot\sin nx{\rm d}x+\int^{\pi}_0{\rm e}^{-x}\cdot\sin nx{\rm d}x\right\}
+\end{align*}
+ここで$I=\int^{\pi}_0{\rm e}^{-x}\cdot\sin nx{\rm d}x$とすると
+\begin{align*}
+  I          & =\left[-{\rm e}^{-x}\sin nx\right]^\pi_0+\int^\pi_0n{\rm e}^{-x}\cos nx {\rm d}x \\
+             & =\left[-{\rm e}^{-x}\sin nx\right]^\pi_0-n\left[e^{-x}\cos nx\right]^\pi_0-n^2I  \\
+  \therefore & \qquad I=\frac{-{\rm e}^{-\pi}\sin n\pi-{\rm e}^{-\pi}n\cos n\pi+n}{n^2+1}
+\end{align*}
+であるので以下を得る.
+\begin{align*}
+  %b_n & =\frac{1}{\pi}\left\{\frac{\cos n\pi-1}{n}+\frac{-{\rm e}^{-\pi}\sin n\pi-{\rm e}^{-\pi}n\cos n\pi+n}{n^2+1}\right\}
+  b_n & =\frac{1}{\pi}\left\{\frac{\cos n\pi-1}{n}+\frac{n-{\rm e}^{-\pi}n\cos n\pi}{n^2+1}\right\}
+\end{align*}
+以上から求めるFourier級数$a(x)$は以下のようになる.
+\begin{align*}
+  a(x)=\frac{1}{2}\left(1+\frac{1}{\pi}(1-{\rm e}^{-\pi})\right)
+  +\sum_{n=1}^\infty & \Biggl(\frac{1}{\pi}\frac{1-{\rm e}^{-\pi}\cos n\pi}{n^2+1}\cos nx                                        \\
+  +                  & \frac{1}{\pi}\left\{\frac{\cos n\pi-1}{n}+\frac{n-{\rm e}^{-\pi}n\cos n\pi}{n^2+1}\right\}\sin nx \Biggr)
+\end{align*}
+\mfig[width=6cm]{fx_ax.png}{$y=f(x)$(黒線)と$y=a(x)$(赤線,10次まで)(by desmos計算機)}
+
+\subsubsection*{$b(x)$について}
+$x\in[0,\pi]$としたときのFourier余弦級数の係数は以下で与えられる.まず$a_0$について
+\begin{align*}
+  a_0 & =\frac{2}{\pi}\int^\pi_{0}f(x){\rm d}x       \\
+      & =\frac{2}{\pi}\int^\pi_0{\rm e}^{-x}{\rm d}x \\
+      & =\frac{2}{\pi}(1-{\rm e}^{-\pi})
+\end{align*}
+次に$a_n$について
+\begin{align*}
+  a_n & =\frac{2}{\pi}\int^\pi_{0}f(x)\cos nx{\rm d}x              \\
+      & =\frac{2}{\pi}\int^{\pi}_0{\rm e}^{-x}\cdot\cos nx{\rm d}x \\
+  %& =\frac{2}{\pi}\frac{{\rm e}^{-\pi}n\sin n\pi-{\rm e}^{-\pi}\cos n\pi+1}{n^2+1}
+      & =\frac{2}{\pi}\frac{1-{\rm e}^{-\pi}\cos n\pi}{n^2+1}
+\end{align*}
+以上から求めるFourier余弦級数$b(x)$は以下のようになる.
+\begin{align*}
+  %b(x)=\frac{1}{\pi}(1-{\rm e}^{-\pi})+\sum^\infty_{n=1}\frac{2}{\pi}\frac{{\rm e}^{-\pi}n\sin n\pi-{\rm e}^{-\pi}\cos n\pi+1}{n^2+1}
+  b(x)=\frac{1}{\pi}(1-{\rm e}^{-\pi})+\sum^\infty_{n=1}\frac{2}{\pi}\frac{1-{\rm e}^{-\pi}\cos n\pi}{n^2+1}
+\end{align*}
+\mfig[width=6cm]{fx_bx.png}{$y=f(x)$(黒線)と$y=b(x)$(赤線,10次まで)(by desmos計算機)}
+
+\subsubsection*{$c(x)$について}
+$x\in[0,\pi]$としたときのFourier正弦級数の係数は以下で与えられる.
+\begin{align*}
+  b_n & =\frac{2}{\pi}\int^\pi_{0}f(x)\sin nx{\rm d}x              \\
+      & =\frac{2}{\pi}\int^{\pi}_0{\rm e}^{-x}\cdot\sin nx{\rm d}x \\
+  %& =\frac{2}{\pi}\frac{-{\rm e}^{-\pi}\sin n\pi-{\rm e}^{-\pi}n\cos n\pi+n}{n^2+1}
+      & =\frac{2}{\pi}\frac{n-{\rm e}^{-\pi}n\cos n\pi}{n^2+1}
+\end{align*}
+以上から求めるFourier正弦級数は以下のようになる.
+\begin{align*}
+  c(x)=\sum^\infty_{n=1}\frac{2}{\pi}\frac{n-{\rm e}^{-\pi}n\cos n\pi}{n^2+1}
+  %c(x)=\sum^\infty_{n=1}\frac{2}{\pi}\frac{-{\rm e}^{-\pi}\sin n\pi-{\rm e}^{-\pi}n\cos n\pi+n}{n^2+1}
+\end{align*}
+\mfig[width=6cm]{fx_cx.png}{$y=f(x)$(黒線)と$y=c(x)$(赤線,10次まで)(by desmos計算機)}
