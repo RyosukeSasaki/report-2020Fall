@@ -1,0 +1,7 @@
+Nyquist frequency: 640.0
+peaks:
+Frequency: 50.0   Amplitude: 1.3345789464620312   Phase(degrees): -88.42638038004158
+Frequency: 130.0   Amplitude: 1.0924101008818365   Phase(degrees): -88.21769128800503
+Frequency: 220.0   Amplitude: 0.1977122060192752   Phase(degrees): -38.89883949766485
+Frequency: 260.0   Amplitude: 0.84347262059984   Phase(degrees): -65.94445906485839
+Frequency: 380.0   Amplitude: 0.5475661063285211   Phase(degrees): -84.40620494512794
