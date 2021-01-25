@@ -1,7 +1,8 @@
 \subsection*{2-2}
 元データは幾つかの余弦波の合成であるので,理想的には周波数スペクトルは図\ref{fig:spec_example.png}のように$\delta$関数からなるはずである.
 しかし実際には,図\ref{fig:data/kadai2/Spectrum-kadai2.png}のように量子化誤差や離散化によりノイズやサイドローブが乗っていると考えられる.
-したがって振幅スペクトルの極大値を拾うことでノイズを除去し,元の余弦波を得る.
+したがって振幅スペクトルのピークを拾うことでノイズを除去し,元の余弦波を得る.
+ピークはScipyライブラリのsignal.find\_peaks関数による極大値,ならびに閾値により検出している.
 \mfig[width=6cm]{spec_example.png}{理想的なスペクトルの例}
 図\ref{fig:data/kadai2/Amplitude-kadai2.png}に振幅スペクトル,図\ref{fig:data/kadai2/Phase-kadai2.png}に位相スペクトルを示す.
 それぞれのスペクトルには振幅スペクトルのピークを書き込んでいる.
@@ -16,18 +17,20 @@
 \mfig[width=10cm]{data/kadai2/Phase-kadai2.png}{位相スペクトル}
 \mfig[width=10cm]{data/kadai2/Wave-kadai2.png}{再合成した波形}
 \begin{table}[h]
-\caption{ピーク周波数,振幅,位相}
-\label{tab:2-2}
-\centering
-\begin{tabular}{ccc}
-\hline
-周波数 / $\si{\hertz}$&振幅&位相 / $\si{\degree}$\\
-\hline \hline
-50.0&1.33&-88.4\\
-130&1.09&-88.2\\
-220&0.197&-38.9\\
-260&0.843&-65.9\\
-380&0.548&-84.4\\
-\hline
-\end{tabular}
+  \caption{ピーク周波数,振幅,位相}
+  \label{tab:2-2}
+  \centering
+  \begin{tabular}{ccc}
+    \hline
+    周波数 / $\si{\hertz}$ & 振幅  & 位相 / $\si{\degree}$ \\
+    \hline \hline
+    40.0                   & 1.20  & 88.2                  \\
+    50.0                   & 1.33  & -88.4                 \\
+    120                    & 1.04  & -5.86                 \\
+    130                    & 1.09  & -88.2                 \\
+    220                    & 0.197 & -38.9                 \\
+    260                    & 0.843 & -65.9                 \\
+    380                    & 0.548 & -84.4                 \\
+    \hline
+  \end{tabular}
 \end{table}

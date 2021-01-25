@@ -1,0 +1,5 @@
+Nyquist frequency: 64.0
+peaks:
+Frequency: 4.0   Amplitude: 1.0000000000806482   Phase(degrees): -2.0272858233892366e-14
+Frequency: 28.0   Amplitude: 0.9999999999529192   Phase(degrees): 179.99999999999997
+Frequency: 40.0   Amplitude: 0.5000000001811962   Phase(degrees): -90.00000000000004
