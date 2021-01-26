@@ -1,0 +1,28 @@
+\subsection*{3-2}
+図\ref{fig:data/kadai3-2/Wave-kadai3.png}に元データと再合成した波形,
+図\ref{fig:data/kadai3-2/Spectrums-kadai3.png}に周波数スペクトル,
+図\ref{fig:data/kadai3-2/Amplitudes-kadai3.png}に振幅スペクトルを示す.
+表\ref{tab:3-2}に各ピークの周波数,振幅,位相を示す.
+Nyquist周波数$f_{N}=32.0\ \si{\hertz}$である.
+また表\ref{tab:yj}にはダウンサンプリング後のデータを示した.ダウンサンプリング処理はpythonスクリプトで行っている.
+
+振幅スペクトルから$f_N$を中心に波形が折り返すエイリアシングが発生していることがわかる.
+実際に表\ref{tab:3-2}より,振幅$0.5$のピークが$\pm F_N-(\pm40.0\mp F_N)=\pm24.0\ \si{\hertz}$に生じている.また折り返した余弦波は位相が反転している.
+さらにダウンサンプリングによりデータ数が半分になったため,周波数スペクトル$|Y_k|$の値も半分になっている.
+\mfig[width=10cm]{data/kadai3-2/Wave-kadai3.png}{元データと再合成したデータ}
+\mfig[width=10cm]{data/kadai3-2/Spectrums-kadai3.png}{周波数スペクトル}
+\mfig[width=10cm]{data/kadai3-2/Amplitudes-kadai3.png}{振幅スペクトル}
+\begin{table}[h]
+\caption{各ピークの振幅}
+\label{tab:3-2}
+\centering
+\begin{tabular}{ccc}
+\hline
+周波数 / $\si{\hertz}$ & 振幅  & 位相 / $\si{\degree}$ \\
+\hline \hline
+4.00&1.00&$2.03\times10^{-14}$\\
+24.0&0.500&$9.00\times10^1$\\
+28.0&1.00&$1.80\times10^2$\\
+\hline
+\end{tabular}
+\end{table}

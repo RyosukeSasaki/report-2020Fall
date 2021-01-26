@@ -1,8 +1,10 @@
+\section{ソースコード}
+\begin{lstlisting}[caption=FFT用pythonスクリプト,label=script]
 #########################################################
-#                                                       #
-#   Author: Ryosuke Sasaki (rsasaki@keio.jp)            #
-#   Date:   2021/1/26                                   #
-#                                                       #
+#
+#   Author: Ryosuke Sasaki (rsasaki@keio.jp)
+#   Date:   2021/1/26
+#
 #########################################################
 
 import numpy as np
@@ -133,12 +135,12 @@ plt.legend(loc='best')
 fig4.savefig(outdir+"/WaveOrigin-"+name+".png")
 
 #
-# 周波数スペクトル(比較用)
+# 比較用周波数スペクトル
 #
 fig5 = plt.figure()
 ax = fig5.add_subplot(111)
 ax.set_xlabel('frequency / Hz')
-ax.set_ylabel('$|X_k|$')
+ax.set_ylabel('$|F_k|$')
 plt.ylim(0, 70)
 fig5.subplots_adjust(left=0.1, right=0.95, bottom=0.1, top=0.95)
 
@@ -155,20 +157,20 @@ ax.text(-F_Nyq, 4.2, "$-F_N$", size=10, horizontalalignment="center")
 
 lists = sorted(zip(*[freq_raw, spec_raw]))
 freq_raw_sorted, spec_raw_sorted = list(zip(*lists))
-ax.plot(freq_raw_sorted, spec_raw_sorted, c="b", linewidth=1)
+ax.plot(freq_raw_sorted, spec_raw_sorted, c="b", linewidth=0.5)
 ax.scatter(freq_raw_sorted, spec_raw_sorted, s=10, c="b", label="Original")
 
 if resample > 1:
     lists = sorted(zip(*[freq, spec]))
     freq_sorted, spec_sorted = list(zip(*lists))
-    ax.plot(freq_sorted, spec_sorted, c="r", linewidth=0.5)
-    ax.scatter(freq_sorted, spec_sorted, s=10, c="r", label="Downsampled")
+    ax.plot(freq_sorted, spec_sorted, c="g", linewidth=0.5)
+    ax.scatter(freq_sorted, spec_sorted, s=10, c="g", label="Downsampled")
     plt.legend(loc='best')
 
 fig5.savefig(outdir+"/Spectrums-"+name+".png")
 
 #
-# 振幅(比較用)
+# 比較用振幅スペクトル
 #
 fig6 = plt.figure()
 ax = fig6.add_subplot(111)
@@ -187,11 +189,11 @@ ax.text(F_Nyq, 0.06, "$F_N$", size=10, horizontalalignment="center")
 ax.text(-F_Nyq, 0.06, "$-F_N$", size=10, horizontalalignment="center")
 
 ax.scatter(freq_raw[0:int(N_raw)], amp_raw[0:int(N_raw)], s=3, label="Original", c="b")
-ax.plot(freq_raw[0:int(N_raw)], amp_raw[0:int(N_raw)], c="b", linewidth=1)
+ax.plot(freq_raw[0:int(N_raw)], amp_raw[0:int(N_raw)], c="b", linewidth=0.5)
 
 if resample > 1:
-    ax.scatter(freq[0:int(N)], amp[0:int(N)], s=3, label="Downsampled", c="r")
-    ax.plot(freq[0:int(N)], amp[0:int(N)], c="r", linewidth=0.5)
+    ax.scatter(freq[0:int(N)], amp[0:int(N)], s=3, label="Downsampled", c="g")
+    ax.plot(freq[0:int(N)], amp[0:int(N)], c="g", linewidth=0.5)
     plt.legend(loc='best')
 
 fig6.subplots_adjust(left=0.1, right=0.95, bottom=0.1, top=0.95)
@@ -201,7 +203,7 @@ fig6.savefig(outdir+"/Amplitudes-"+name+".png")
 # ダウンサンプリングしたデータを保存
 #
 csv = np.stack([raw_x, raw_y], 1)
-np.savetxt(outdir + "/" + name + "-" + "downsample" + ".csv", csv, fmt='%.10f', delimiter=",")
+np.savetxt(outdir + "/" + name + "-" + "downsample" + ".csv", csv, fmt='%.10f')
 
 #
 # 結果の出力
@@ -218,3 +220,5 @@ with open(outdir + "/" + name + ".txt", 'w') as f:
     for i in peaks:
         print("Frequency:", freq[i], "  Amplitude:", amp[i],
               "  Phase(degrees):", np.degrees(phase[i]), file=f)
+
+\end{lstlisting}

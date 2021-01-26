@@ -3,7 +3,7 @@
 しかし実際には,図\ref{fig:data/kadai2/Spectrum-kadai2.png}のように量子化誤差や離散化によりノイズやサイドローブが乗っていると考えられる.
 したがって振幅スペクトルのピークを拾うことでノイズを除去し,元の余弦波を得る.
 ピークはScipyライブラリのsignal.find\_peaks関数による極大値,ならびに閾値により検出している.
-\mfig[width=6cm]{spec_example.png}{理想的なスペクトルの例}
+\mfig[width=6cm]{spec_example.png}{理想的なスペクトルの例(by desmos計算機)}
 図\ref{fig:data/kadai2/Amplitude-kadai2.png}に振幅スペクトル,図\ref{fig:data/kadai2/Phase-kadai2.png}に位相スペクトルを示す.
 それぞれのスペクトルには振幅スペクトルのピークを書き込んでいる.
 なお振幅は以下のように計算される.

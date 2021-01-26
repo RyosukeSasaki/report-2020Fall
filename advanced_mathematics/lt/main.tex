@@ -6,6 +6,8 @@
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{bm}
 \usepackage{siunitx}
+\usepackage{listings,jvlisting}
+\usepackage{longtable}
 
 \usepackage[dvipdfmx]{graphicx}
 \makeatletter
@@ -23,6 +25,31 @@
 \end{center}
 }
 
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+\renewcommand{\lstlistingname}{ソースコード}
+\makeatletter
+    \AtBeginDocument{
+    \renewcommand*{\thelstlisting}{\Alph{section}.\arabic{lstlisting}}
+    \@addtoreset{lstlisting}{section}}
+\makeatother
+
 \begin{document}
 \title{応用数学 期末レポート}
 \author{佐々木良輔}
@@ -38,5 +65,15 @@
 \input{2-2.tex}
 \clearpage
 \input{3-1.tex}
+\input{3-2.tex}
+\input{3-3.tex}
 \bibliography{ref.bib}
+\clearpage
+\appendix
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\def\thesection{補遺\Alph{section}}
+\input{code.tex}
+\clearpage
+\setcounter{table}{0}
+\input{csv1.tex}
 \end{document}

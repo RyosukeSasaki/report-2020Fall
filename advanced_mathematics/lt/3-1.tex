@@ -1,9 +1,23 @@
 \subsection*{3-1}
 図\ref{fig:data/kadai3-1/Wave-kadai3.png}に元データと再合成した波形,
-図\ref{fig:data/kadai3-1/Spectrum-kadai3.png}に周波数スペクトルを示す.これらはのpythonスクリプトで描画した.
-またNyquist周波数$f_{N1}$は以下のようになる.
-\begin{align*}
-  f_{N1}=\frac{1}{2\Delta t}=64.0\ \si{\hertz}
-\end{align*}
+図\ref{fig:data/kadai3-1/Spectrums-kadai3.png}に周波数スペクトル,
+図\ref{fig:data/kadai3-1/Amplitudes-kadai3.png}に振幅スペクトルを示す.
+表\ref{tab:3-1}に各ピークの周波数,振幅,位相を示す.
+Nyquist周波数$f_{N}=64.0\ \si{\hertz}$である.
 \mfig[width=10cm]{data/kadai3-1/Wave-kadai3.png}{元データと再合成したデータ}
-\mfig[width=10cm]{data/kadai3-1/Spectrum-kadai3.png}{周波数スペクトル}
+\mfig[width=10cm]{data/kadai3-1/Spectrums-kadai3.png}{周波数スペクトル}
+\mfig[width=10cm]{data/kadai3-1/Amplitudes-kadai3.png}{振幅スペクトル}
+\begin{table}[h]
+\caption{各ピークの振幅}
+\label{tab:3-1}
+\centering
+\begin{tabular}{ccc}
+\hline
+周波数 / $\si{\hertz}$ & 振幅  & 位相 / $\si{\degree}$ \\
+\hline \hline
+4.00&1.00&$2.03\times10^{-14}$\\
+28.0&1.00&$1.80\times10^2$\\
+40.0&0.500&$-9.00\times10^1$\\
+\hline
+\end{tabular}
+\end{table}

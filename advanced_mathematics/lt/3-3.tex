@@ -1,0 +1,28 @@
+\subsection*{3-3}
+図\ref{fig:data/kadai3-3/Wave-kadai3.png}に元データと再合成した波形,
+図\ref{fig:data/kadai3-3/Spectrums-kadai3.png}に周波数スペクトル,
+図\ref{fig:data/kadai3-3/Amplitudes-kadai3.png}に振幅スペクトルを示す.
+表\ref{tab:3-3}に各ピークの周波数,振幅,位相を示す.
+Nyquist周波数$f_{N}=16.0\ \si{\hertz}$である.
+また表\ref{tab:zj}にはダウンサンプリング後のデータを示した.
+
+元データでの$4.00\ \si{\hertz}$と$28.0\ \si{\hertz}$の余弦波は$f_N$で折り返したときにちょうど重なっている.
+またそれぞれの余弦波は振幅が等しく逆位相であったので,エイリアシングノイズと$4.00\ \si{\hertz}$の余弦波はちょうど打ち消し合うと考えられる.
+また$40.0\ \si{\hertz}$の余弦波が折り返すことで$\pm F_N-(\pm40\mp F_N)=\mp8\ \si{\hertz}$の余弦波が生じると考えられる.
+実際にダウンサンプリング後の振幅スペクトルには$8.00\ \si{\hertz}$のピークのみが現れ,他の成分は消えている.
+さらにダウンサンプリングによりデータ数が$1/4$になったため,周波数スペクトル$|Z_k|$の値も$1/4$になっている.
+\mfig[width=10cm]{data/kadai3-3/Wave-kadai3.png}{元データと再合成したデータ}
+\mfig[width=10cm]{data/kadai3-3/Spectrums-kadai3.png}{周波数スペクトル}
+\mfig[width=10cm]{data/kadai3-3/Amplitudes-kadai3.png}{振幅スペクトル}
+\begin{table}[h]
+\caption{各ピークの振幅}
+\label{tab:3-3}
+\centering
+\begin{tabular}{ccc}
+\hline
+周波数 / $\si{\hertz}$ & 振幅  & 位相 / $\si{\degree}$ \\
+\hline \hline
+$8.00$&0.500&$-9.00\times10^{2}$\\
+\hline
+\end{tabular}
+\end{table}
